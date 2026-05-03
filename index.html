@@ -1,70 +1,66 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Happy Birthday 🎉</title>
 
   <style>
     body {
       margin: 0;
-      text-align: center;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #ffe0e9, #fff5f7);
+      background: linear-gradient(to bottom, #ffe4ec, #fff);
       color: #444;
-      overflow-x: hidden;
+      text-align: center;
     }
 
     h1 {
-      margin-top: 60px;
-      font-size: 48px;
+      font-size: 28px;
+      margin-top: 40px;
       color: #ff4d6d;
     }
 
     .typing {
-      font-size: 22px;
-      margin-top: 20px;
-      min-height: 40px;
+      font-size: 16px;
+      margin-top: 10px;
+      padding: 0 20px;
+      min-height: 30px;
     }
 
     img {
-      width: 180px;
+      width: 140px;
+      height: 140px;
       border-radius: 50%;
-      margin-top: 25px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      margin-top: 20px;
+      object-fit: cover;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
     }
 
     .card {
-      max-width: 550px;
-      margin: 30px auto;
+      margin: 20px;
+      padding: 18px;
       background: white;
-      padding: 25px;
-      border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-      line-height: 1.7;
-      font-size: 18px;
+      border-radius: 18px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      font-size: 15px;
+      line-height: 1.6;
     }
 
     button {
-      margin-top: 20px;
-      padding: 12px 25px;
-      font-size: 16px;
+      margin-top: 15px;
+      padding: 10px 20px;
+      font-size: 14px;
       border: none;
       background: #ff4d6d;
       color: white;
-      border-radius: 25px;
+      border-radius: 20px;
       cursor: pointer;
-      transition: 0.3s;
     }
 
-    button:hover {
-      background: #ff2e55;
-    }
-
-    /* Floating hearts */
     .heart {
       position: fixed;
       bottom: -10px;
       color: #ff6b81;
-      font-size: 20px;
+      font-size: 16px;
       animation: floatUp 6s linear infinite;
     }
 
@@ -82,59 +78,56 @@
 
   <div class="typing" id="typing"></div>
 
-  <img src="your-photo.jpg" alt="Her Photo">
+  <img src="photo.jpg" alt="Her Photo">
 
   <div class="card">
     <p>
-      I don’t always say this, but you’re genuinely one of the most special people in my life.
+      I don’t say this often, but you’re really a special person in my life 😊
     </p>
 
     <p>
-      You have this way of making things feel lighter, calmer, and just better…  
-      and I really appreciate that more than you probably realize.
+      Talking to you always feels easy and calm, and I genuinely enjoy it.
     </p>
 
     <p>
-      I’m really glad I got to know you.  
-      And honestly, I hope I get to keep you in my life for a long time.
+      I’m really glad I got to know you… and I hope you stay in my life for a long time.
     </p>
 
     <p>
-      Wishing you happiness, peace, success—and lots of smiles today and always 🌸
+      Wishing you happiness, success, and lots of smiles today 🌸
     </p>
   </div>
 
-  <button onclick="surprise()">Click for a Surprise 🎁</button>
+  <button onclick="surprise()">Tap for Surprise 🎁</button>
 
   <audio id="music" src="birthday.mp3"></audio>
 
   <script>
     // Typing effect
-    const text = "Hey... just a small surprise for you 😊";
+    const text = "Hey... made something small for you 😊";
     let i = 0;
 
     function typingEffect() {
       if (i < text.length) {
         document.getElementById("typing").innerHTML += text.charAt(i);
         i++;
-        setTimeout(typingEffect, 50);
+        setTimeout(typingEffect, 40);
       }
     }
     typingEffect();
 
-    // Button surprise
+    // Button
     function surprise() {
       document.getElementById("music").play();
-      alert("You deserve something nice today 😊🎉");
+      alert("You deserve a really nice day 😊🎉");
     }
 
-    // Floating hearts generator
+    // Hearts
     function createHeart() {
       const heart = document.createElement("div");
       heart.classList.add("heart");
       heart.innerHTML = "❤";
       heart.style.left = Math.random() * 100 + "vw";
-      heart.style.fontSize = (10 + Math.random() * 20) + "px";
       document.body.appendChild(heart);
 
       setTimeout(() => {
@@ -142,7 +135,7 @@
       }, 6000);
     }
 
-    setInterval(createHeart, 500);
+    setInterval(createHeart, 600);
   </script>
 
 </body>
