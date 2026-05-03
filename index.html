@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Happy Birthday 🎉</title>
+
+  <style>
+    body {
+      margin: 0;
+      text-align: center;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #ffe0e9, #fff5f7);
+      color: #444;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      margin-top: 60px;
+      font-size: 48px;
+      color: #ff4d6d;
+    }
+
+    .typing {
+      font-size: 22px;
+      margin-top: 20px;
+      min-height: 40px;
+    }
+
+    img {
+      width: 180px;
+      border-radius: 50%;
+      margin-top: 25px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+
+    .card {
+      max-width: 550px;
+      margin: 30px auto;
+      background: white;
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      line-height: 1.7;
+      font-size: 18px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 25px;
+      font-size: 16px;
+      border: none;
+      background: #ff4d6d;
+      color: white;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #ff2e55;
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: fixed;
+      bottom: -10px;
+      color: #ff6b81;
+      font-size: 20px;
+      animation: floatUp 6s linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-100vh); opacity: 0; }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <h1>Happy Birthday, [Her Name] 🎂</h1>
+
+  <div class="typing" id="typing"></div>
+
+  <img src="your-photo.jpg" alt="Her Photo">
+
+  <div class="card">
+    <p>
+      I don’t always say this, but you’re genuinely one of the most special people in my life.
+    </p>
+
+    <p>
+      You have this way of making things feel lighter, calmer, and just better…  
+      and I really appreciate that more than you probably realize.
+    </p>
+
+    <p>
+      I’m really glad I got to know you.  
+      And honestly, I hope I get to keep you in my life for a long time.
+    </p>
+
+    <p>
+      Wishing you happiness, peace, success—and lots of smiles today and always 🌸
+    </p>
+  </div>
+
+  <button onclick="surprise()">Click for a Surprise 🎁</button>
+
+  <audio id="music" src="birthday.mp3"></audio>
+
+  <script>
+    // Typing effect
+    const text = "Hey... just a small surprise for you 😊";
+    let i = 0;
+
+    function typingEffect() {
+      if (i < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typingEffect, 50);
+      }
+    }
+    typingEffect();
+
+    // Button surprise
+    function surprise() {
+      document.getElementById("music").play();
+      alert("You deserve something nice today 😊🎉");
+    }
+
+    // Floating hearts generator
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerHTML = "❤";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = (10 + Math.random() * 20) + "px";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 6000);
+    }
+
+    setInterval(createHeart, 500);
+  </script>
+
+</body>
+</html>
